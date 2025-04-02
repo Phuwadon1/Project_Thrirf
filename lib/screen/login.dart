@@ -1,9 +1,8 @@
+import 'package:cool_alert/cool_alert.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:thriftpoint/botton/navigation_page.dart';
-import 'package:thriftpoint/screen/home_screen.dart';
-import 'register.dart';
-import 'package:cool_alert/cool_alert.dart';
+import 'package:thriftpoint/screen/register.dart';
 
 class LoginScreen extends StatefulWidget {
   static const routeName = '/login';

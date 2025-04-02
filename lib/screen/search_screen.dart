@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:fan_carousel_image_slider/fan_carousel_image_slider.dart';
-// import 'package:qr_flutter/qr_flutter.dart';
-import 'product_screen.dart';
+import 'package:thriftpoint/screen/product_screen.dart';
 
 class SearchScreen extends StatefulWidget {
   @override

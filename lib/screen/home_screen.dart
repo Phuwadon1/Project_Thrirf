@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:thriftpoint/provider/favorite_provider.dart';
-import 'product_screen.dart'; // <-- เพิ่ม import
-import 'package:favorite_button/favorite_button.dart';
+import 'package:thriftpoint/screen/product_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   List imageList = [
@@ -102,7 +101,7 @@ class HomeScreen extends StatelessWidget {
                   //    "assets/ThriftPoint_cover_black.png", // ตรวจสอบว่า path ถูกต้อง และอยู่ใน pubspec.yaml
                   //    fit: BoxFit.cover, // อาจจะเพิ่ม fit
                   //   ),
-                  
+
                 ),
                 // SizedBox(height: 20),
                 // // --- Tabs --- (เหมือนเดิม)

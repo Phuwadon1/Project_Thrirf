@@ -1,12 +1,11 @@
 import 'dart:typed_data';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore/cloud_firestore.dart' as html;
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:firebase_storage/firebase_storage.dart';
-import 'dart:io' show File;
-import 'dart:html' as html; // For web (kIsWeb)
 import 'package:lottie/lottie.dart';
 
 class EditProfileScreen extends StatefulWidget {
@@ -79,7 +78,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
       if (kIsWeb) {
         final bytes = await _selectedImage!.readAsBytes();
-        final blob = html.Blob([bytes]);
+        final blob = html.Blob([bytes] as Uint8List);
         final uploadTask = ref.putBlob(blob);
         final snapshot = await uploadTask.whenComplete(() => {});
         return await snapshot.ref.getDownloadURL();

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:thriftpoint/screen/favorite_screen.dart';
 import 'package:thriftpoint/screen/home_screen.dart';
@@ -12,7 +11,7 @@ class BottomNavigationBarPage extends StatefulWidget {
   State<BottomNavigationBarPage> createState() => _BottomNavigationBarPageState();
 }
   
-  
+
 class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
   
   int myCurrentIndex = 0;
