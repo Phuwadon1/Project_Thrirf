@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "966265069519",
+    "firebase_url": "https://test-c0003-default-rtdb.firebaseio.com",
+    "project_id": "test-c0003",
+    "storage_bucket": "test-c0003.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966265069519:android:dc4e6d95933c559f74fcba",
+        "android_client_info": {
+          "package_name": "com.example.thriftpoint"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz_Hy9FXPWpynT0MngTTWivGxjKtf--4g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
