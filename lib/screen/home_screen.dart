@@ -102,6 +102,7 @@ class HomeScreen extends StatelessWidget {
                   //    "assets/ThriftPoint_cover_black.png", // ตรวจสอบว่า path ถูกต้อง และอยู่ใน pubspec.yaml
                   //    fit: BoxFit.cover, // อาจจะเพิ่ม fit
                   //   ),
+                  
                 ),
                 // SizedBox(height: 20),
                 // // --- Tabs --- (เหมือนเดิม)

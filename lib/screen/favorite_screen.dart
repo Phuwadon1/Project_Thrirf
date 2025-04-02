@@ -26,6 +26,7 @@ class FavoriteScreen extends StatelessWidget {
 
   final List<String> reviews = ["590", "899", "1000", "9999"];
 
+
   @override
   Widget build(BuildContext context) {
     final favoriteIndexes = context.watch<FavoriteProvider>().favoriteIndexes;

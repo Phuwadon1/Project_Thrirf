@@ -5,14 +5,13 @@ import 'package:thriftpoint/screen/home_screen.dart';
 import 'package:thriftpoint/screen/profile_screen.dart';
 import 'package:thriftpoint/screen/search_screen.dart';
 
-
-
 class BottomNavigationBarPage extends StatefulWidget {
   const BottomNavigationBarPage({super.key, required String title});
 
   @override
   State<BottomNavigationBarPage> createState() => _BottomNavigationBarPageState();
 }
+  
   
 class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
   

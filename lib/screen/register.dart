@@ -7,6 +7,7 @@ import 'dart:typed_data';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
+
 class Register extends StatefulWidget {
   static const routeName = '/register';
 

@@ -8,6 +8,7 @@ class SearchScreen extends StatefulWidget {
   _SearchScreenState createState() => _SearchScreenState();
 }
 
+
 class _SearchScreenState extends State<SearchScreen> {
   List<String> productTitles = [
     "Soldtheworlds",

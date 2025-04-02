@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class FavoriteProvider extends ChangeNotifier {
   final List<int> _favoriteIndexes = [];
 
