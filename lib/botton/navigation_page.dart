@@ -1,14 +1,14 @@
 
 import 'package:flutter/material.dart';
-import 'package:thriftpoint/screen/chat_screen.dart';
+import 'package:thriftpoint/screen/favorite_screen.dart';
 import 'package:thriftpoint/screen/home_screen.dart';
 import 'package:thriftpoint/screen/profile_screen.dart';
 import 'package:thriftpoint/screen/search_screen.dart';
 
 
+
 class BottomNavigationBarPage extends StatefulWidget {
-  const BottomNavigationBarPage({super.key,  required this.title});
-  final String title;
+  const BottomNavigationBarPage({super.key, required String title});
 
   @override
   State<BottomNavigationBarPage> createState() => _BottomNavigationBarPageState();
@@ -18,10 +18,10 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
   
   int myCurrentIndex = 0;
 
-  List screens = const [
+  List screens =  [
     HomeScreen(),
     SearchScreen(),
-    ChatScreen(),
+    FavoriteScreen(favoriteProducts: [], productTitles: [], isFavorite: [],),
     ProfileScreen(),
   ];
 
@@ -31,7 +31,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
       bottomNavigationBar: NavigationBar(destinations: const [
         NavigationDestination(icon: Icon(Icons.home_outlined),selectedIcon: Icon(Icons.home, color: Colors.black), label: 'Home',),
         NavigationDestination(icon: Icon(Icons.search_outlined),selectedIcon: Icon(Icons.search, color: Colors.black),label: 'Search',),
-        NavigationDestination(icon: Icon(Icons.chat_outlined),selectedIcon: Icon(Icons.chat, color: Colors.black), label: 'Chat',),
+        NavigationDestination(icon: Icon(Icons.favorite_outlined),selectedIcon: Icon(Icons.favorite, color: Colors.black), label: 'Favorite',),
         NavigationDestination(icon: Icon(Icons.person_outlined),selectedIcon: Icon(Icons.person, color: Colors.black), label: 'Profile',),
         ],
         selectedIndex: myCurrentIndex,
