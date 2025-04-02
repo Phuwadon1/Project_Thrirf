@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:thriftpoint/provider/favorite_provider.dart';
 import 'package:thriftpoint/screen/login.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:thriftpoint/screen/profile_screen.dart';
@@ -23,7 +25,12 @@ void main() async {
       measurementId: "G-0WFVJDPQQR",
     ),
   );
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => FavoriteProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

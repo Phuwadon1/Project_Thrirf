@@ -21,7 +21,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
   List screens =  [
     HomeScreen(),
     SearchScreen(),
-    FavoriteScreen(favoriteProducts: [], productTitles: [], isFavorite: [],),
+    FavoriteScreen(),
     ProfileScreen(),
   ];
 

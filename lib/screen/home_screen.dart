@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:thriftpoint/provider/favorite_provider.dart';
 import 'product_screen.dart'; // <-- เพิ่ม import
 import 'package:favorite_button/favorite_button.dart';
-
 
 class HomeScreen extends StatelessWidget {
   List imageList = [
@@ -224,26 +225,6 @@ class HomeScreen extends StatelessWidget {
                                         width: 160,
                                       ),
                                     ),
-                                    Positioned(
-                                      right: 8, // ปรับตำแหน่ง
-                                      top: 8, // ปรับตำแหน่ง
-                                      child: Container(
-                                        height: 30,
-                                        width: 30,
-                                        child: Center(
-                                          child: FavoriteButton(
-                                            isFavorite: false,
-                                            // iconDisabledColor: Colors.white,
-                                            valueChanged: (isFavorite) {
-                                              // ignore: avoid_print
-                                              print(
-                                                'Is Favorite : $isFavorite',
-                                              );
-                                            },
-                                          ),
-                                        ),
-                                      ),
-                                    ),
                                   ],
                                 ),
                               ),
@@ -381,37 +362,32 @@ class HomeScreen extends StatelessWidget {
                               child: Stack(
                                 children: [
                                   ClipRRect(
-                                    // ไม่ต้องมี InkWell ซ้อน
                                     borderRadius: BorderRadius.vertical(
                                       top: Radius.circular(15),
-                                    ), // ทำให้มุมบนโค้งตามกรอบ
+                                    ),
                                     child: Image.asset(
-                                      "assets/${imageList[index]}", // ใส่ assets/ ถ้าอยู่ใน folder
-                                      // width: double.infinity, // ให้กว้างเต็ม Container
-                                      height:
-                                          double
-                                              .infinity, // ให้สูงเต็มพื้นที่ Expanded
+                                      "assets/${imageList[index]}",
+                                      height: double.infinity,
                                       fit: BoxFit.cover,
                                     ),
                                   ),
 
                                   Positioned(
-                                    // Favorite icon (เหมือนเดิม)
                                     right: 10,
                                     top: 10,
-                                    child: Container(
-                                      height: 30,
-                                      width: 30,
-                                      child: Center(
-                                        child: FavoriteButton(
-                                          isFavorite: false,
-                                          // iconDisabledColor: Colors.white,
-                                          valueChanged: (isFavorite) {
-                                            // ignore: avoid_print
-                                            print('Is Favorite : $isFavorite');
-                                          },
-                                        ),
-                                      ),
+                                    child: Consumer<FavoriteProvider>(
+                                      builder:
+                                          (context, provider, _) => IconButton(
+                                            icon: Icon(
+                                              provider.isFavorite(index)
+                                                  ? Icons.favorite
+                                                  : Icons.favorite_border,
+                                              color: Colors.red,
+                                            ),
+                                            onPressed: () {
+                                              provider.toggleFavorite(index);
+                                            },
+                                          ),
                                     ),
                                   ),
                                 ],
