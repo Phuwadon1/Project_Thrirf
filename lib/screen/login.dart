@@ -40,6 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
         _authenticatingStatus = true;
       });
 
+
       try {
         await _auth.signInWithEmailAndPassword(
           email: _email.text.trim(),

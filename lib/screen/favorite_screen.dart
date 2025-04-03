@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:thriftpoint/provider/favorite_provider.dart';
 
+
 class FavoriteScreen extends StatelessWidget {
   final List<String> imageList = [
     "soldtheworlds.png",

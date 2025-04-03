@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:thriftpoint/provider/favorite_provider.dart';
 import 'package:thriftpoint/screen/product_screen.dart';
 
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
   @override

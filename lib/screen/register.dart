@@ -210,6 +210,7 @@ class _RegisterState extends State<Register> {
                                   if (_formKey.currentState!.validate()) {
                                     setState(() => _registeringStatus = true);
 
+
                                     try {
                                       UserCredential userCredential =
                                           await _auth

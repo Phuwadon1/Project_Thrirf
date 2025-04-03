@@ -2,6 +2,7 @@ import 'package:fan_carousel_image_slider/fan_carousel_image_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
+
 class ProductScreen extends StatefulWidget {
   // 1. เพิ่มตัวแปรเพื่อรับข้อมูล
   final String productTitle;

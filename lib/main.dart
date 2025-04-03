@@ -5,6 +5,7 @@ import 'package:thriftpoint/provider/favorite_provider.dart';
 import 'package:thriftpoint/screen/login.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
+
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);

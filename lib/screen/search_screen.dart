@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:thriftpoint/screen/product_screen.dart';
 
+
 class SearchScreen extends StatefulWidget {
   @override
   _SearchScreenState createState() => _SearchScreenState();
