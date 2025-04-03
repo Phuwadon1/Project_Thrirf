@@ -141,7 +141,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           _passwordController.text.trim(),
         );
       }
-
+  
       Navigator.pop(context, {
         'name': _nameController.text.trim(),
         'email': _emailController.text.trim(),

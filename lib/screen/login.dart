@@ -1,7 +1,9 @@
 import 'package:cool_alert/cool_alert.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:thriftpoint/botton/navigation_page.dart';
+import 'package:thriftpoint/provider/favorite_provider.dart';
 import 'package:thriftpoint/screen/register.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -32,7 +34,6 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
-
   Future<void> _login() async {
     if (_formKey.currentState!.validate()) {
       setState(() {
@@ -44,6 +45,17 @@ class _LoginScreenState extends State<LoginScreen> {
           email: _email.text.trim(),
           password: _password.text.trim(),
         );
+        // หลัง login/signup สำเร็จ
+        final favProvider = Provider.of<FavoriteProvider>(
+          context,
+          listen: false,
+        );
+        favProvider.clear(); // ⬅️ เคลียร์ข้อมูลเก่า
+        await favProvider.loadFavorites(); // ⬅️ โหลดของ user ปัจจุบัน
+        await Provider.of<FavoriteProvider>(
+          context,
+          listen: false,
+        ).loadFavorites();
 
         CoolAlert.show(
           context: context,

@@ -3,7 +3,21 @@ import 'package:provider/provider.dart';
 import 'package:thriftpoint/provider/favorite_provider.dart';
 import 'package:thriftpoint/screen/product_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<FavoriteProvider>(context, listen: false).loadFavorites();
+    });
+  }
+
   List imageList = [
     "soldtheworlds.png",
     "zotusstore.png",
@@ -97,11 +111,11 @@ class HomeScreen extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
+
                   //  child: Image.asset(
                   //    "assets/ThriftPoint_cover_black.png", // ตรวจสอบว่า path ถูกต้อง และอยู่ใน pubspec.yaml
                   //    fit: BoxFit.cover, // อาจจะเพิ่ม fit
                   //   ),
-
                 ),
                 // SizedBox(height: 20),
                 // // --- Tabs --- (เหมือนเดิม)
